@@ -23,28 +23,28 @@ Abrir navegador local → escolher arquivo → validar vídeo/modelo → selecio
 |---|---|---|
 | RF-001 | Selecionar vídeo local | Confirmado no código; execução não verificada |
 | RF-002 | Validar entrada e informar erro legível | Confirmado no código; teste não verificado |
-| RF-003 | Configurar modelo YOLO disponível | Confirmado no código; YOLO não verificado |
-| RF-004 | Selecionar dispositivo com CPU padrão | Confirmado no código; execução não verificada |
-| RF-005 | Iniciar pipeline existente via adaptador | Confirmado no código; pipeline não verificado |
+| RF-003 | Configurar modelo YOLO disponível | **Confirmado** no baseline e no peso local |
+| RF-004 | Selecionar dispositivo com CPU padrão | **Confirmado** no código e smoke sintético |
+| RF-005 | Iniciar pipeline existente via adaptador | Baseline **confirmado**; pipeline original não fornecido |
 | RF-006 | Mostrar idle/running/completed/failed | Confirmado no código; teste não verificado |
 | RF-007 | Reproduzir vídeo anotado compatível com navegador | Confirmado no código; navegador não verificado |
 | RF-008 | Disponibilizar arquivo de saída | Confirmado no código; teste não verificado |
 | RF-009 | Impedir execuções simultâneas | Confirmado no código; teste não verificado |
 | RF-010 | Mostrar informações básicas verificáveis da execução | Confirmado no código; execução não verificada |
-| RF-011 | Preservar a CLI existente | Informado/não verificado: CLI ausente |
+| RF-011 | Preservar a CLI existente | Contrato baseline **confirmado**; CLI original ausente |
 | RF-012 | Reconhecer ações e gerar estatísticas | Fora de escopo |
 
 ## Requisitos não funcionais
 | ID | Requisito | Estado |
 |---|---|---|
-| RNF-001 | Executar localmente no Windows | Código confirmado; execução não verificada |
-| RNF-002 | CPU padrão, GPU não obrigatória | Confirmado no código; execução não verificada |
+| RNF-001 | Executar localmente no Windows | **Confirmado** com smoke sintético |
+| RNF-002 | CPU padrão, GPU não obrigatória | **Confirmado** com PyTorch CPU |
 | RNF-003 | Não carregar vídeo inteiro na RAM | Cópia em blocos confirmada; Streamlit não verificado |
 | RNF-004 | UI acessível apenas em 127.0.0.1 por padrão | Confirmado na configuração; smoke não verificado |
 | RNF-005 | Isolar UI de processamento | Confirmado no código |
 | RNF-006 | Preservar original e limpar temporários com segurança | Confirmado no código; teste não verificado |
-| RNF-007 | Logging e erros observáveis | Confirmado no código; execução não verificada |
-| RNF-008 | Testes automatizados sem inferência pesada por padrão | Confirmado no código; execução não verificada |
+| RNF-007 | Logging e erros observáveis | **Confirmado** no código e smoke da CLI |
+| RNF-008 | Testes automatizados sem inferência pesada por padrão | **Confirmado**: 21 testes |
 
 ## Regras de negócio
 Um processamento por vez; nunca sobrescrever entrada; não tratar IDs temporários como identidade; não exibir estatísticas não calculadas; falha não pode ser exibida como sucesso; configuração do modelo deve apontar para recurso permitido.

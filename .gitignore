@@ -7,4 +7,6 @@ python-*.log
 data/work/
 data/outputs/
 data/.processing.lock
+models/*.pt
+models/*.onnx
 

@@ -1,7 +1,9 @@
 # Especificações técnicas — MVP
 
 ## Princípio
-Contratos propostos sujeitos à auditoria do `run.py`. Reutilizar a CLI, preferencialmente via adaptador, sem duplicar detecção.
+O contrato do `run.py` baseline está confirmado. O pipeline original permanece
+ausente e, se for fornecido, deverá ser auditado antes de substituir o baseline.
+A interface reutiliza a CLI via adaptador e não duplica detecção.
 
 ## Entrada
 Selecionar arquivo de vídeo local por interface Streamlit; validar extensão permitida e conteúdo legível (quando possível via OpenCV), tamanho e disponibilidade de espaço. Salvar upload em diretório de trabalho controlado com nome gerado, nunca confiar no nome original para caminho de destino. Não alterar arquivo fonte.
